@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+            <a th:href="@{/employees/list}" class="btn btn-primary">Back to Employee Listing</a>
+            <br><br>
+            <h1>Add New Employee</h1>
+            <hr>
+            <form method="POST"th:action="@{#}"th:object="${employee}">
+                <!-- First Name -->
+                <div class="mb-3">
+                    <label for="firstname" class="form-label">First Name</label>
+                    <input type="text" class="form-control" name="firstName" th:field="*{firstName}" />
+                </div>
+                <div class="alert alert-danger" th:if="${#fields.hasErrors('firstName')}" th:error="${#fields.errors('firstName')}"></div>
+
+                <!-- Last Name -->
+                <div class="mb-3">
+                    <label for="lastName" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" name="lastName" th:field="*{lastName}" />
+                </div>
+                <div class="alert alert-danger" th:if="${#fields.hasErrors('lastName')}" th:error="${#fields.errors('lastName')}"></div>
+                
+                <!--email-->
+                <div class="mb-3">
+                    <label for="email" class="form-label">email</label>
+                    <input type="text" class="form-control" name="email" th:field="*{email}" />
+                </div>
+                <div class="alert alert-danger" th:if="${#fields.hasErrors('email')}" th:error="${#fields.errors('email')}"></div>
+                
+
+                <!-- Phone Number -->
+                <div class="mb-3">
+                    <label for="phoneNo" class="form-label">Phone Number</label>
+                    <input type="text" class="form-control" name="phoneNo" th:field="*{phoneNo}" />
+                </div>
+                <div class="alert alert-danger" th:if="${#fields.hasErrors('phoneNo')}" th:error="${#fields.errors('phoneNo')}"></div>
+
+                <!-- Salary -->
+                <div class="mb-3">
+                    <label for="salary" class="form-label">Salary</label>
+                    <input type="text" class="form-control" name="salary" th:field="*{salary}" />
+                </div>
+                <div class="alert alert-danger" th:if="${#fields.hasErrors('salary')}" th:error="${#fields.errors('salary')}"></div>
+
+                <!-- Birthday -->
+                <div class="mb-3">
+                    <label for="birthday" class="form-label">Birthday</label>
+                    <input type="text" class="form-control" name="birthday" th:field="*{birthday}" />
+                </div>
+                <div class="alert alert-danger" th:if="${#fields.hasErrors('birthday')}" th:error="${#fields.errors('birthday')}"></div>
+
+                <!-- Postal Code -->
+                <div class="mb-3">
+                    <label for="postalCode" class="form-label">Postal Code</label>
+                    <input type="text" class="form-control" name="postalCode" th:field="*{postalCode}" />
+                </div>
+                <div class="alert alert-danger" th:if="${#fields.hasErrors('postalCode')}" th:error="${#fields.errors('postalCode')}"></div>
+                <!--My submit button-->
+                 <button type="submit" class="btn btn-info">hi</a>
+
+        </form>
+
+        
+
+</body>
+</html>
